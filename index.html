@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jardín otoñal 3D — Crisantemo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Lienzo donde el renderer dibuja la escena -->
+    <canvas id="lienzo"></canvas>
+
+    <!-- Encabezado -->
+    <header id="encabezado">
+        <h1>Jardín otoñal 3D — Crisantemo</h1>
+        <p>Práctica 03 · Plantas 3D con Three.js · Ricardo Melgoza y Rebeca Arciga</p>
+    </header>
+
+    <!-- PANEL DE INFORMACIÓN (se llena al seleccionar con raycasting) -->
+    <aside id="panel">
+        <h2>Parte seleccionada</h2>
+
+        <p class="etiqueta">Nombre</p>
+        <p id="dato-nombre">—</p>
+
+        <p class="etiqueta">Tipo de geometría</p>
+        <p id="dato-geometria">—</p>
+
+        <p class="etiqueta">Altura sobre el suelo</p>
+        <p id="dato-altura">—</p>
+
+        <p class="etiqueta">Función</p>
+        <p id="dato-funcion">Haz clic sobre una parte de la planta para ver su ficha.</p>
+    </aside>
+
+    <!-- MENÚ DE CONTROLES HTML -->
+    <aside id="controles">
+        <h2>Controles</h2>
+
+        <button id="btn-animacion">⏸ Detener animación</button>
+        <button id="btn-hojas-color">🍂 Cambiar color de hojas</button>
+        <button id="btn-hojas-ver">👁 Ocultar hojas</button>
+        <button id="btn-camara">🔄 Reiniciar cámara</button>
+
+        <label for="luz">Intensidad de la luz: <span id="luz-valor">1.0</span></label>
+        <input type="range" id="luz" min="0" max="2" step="0.1" value="1">
+
+        <p id="estado">—</p>
+    </aside>
+
+    <!-- Instrucciones -->
+    <div id="instrucciones">
+        🖱️ Arrastra para rotar · Rueda para zoom · Clic para seleccionar una parte
+    </div>
+
+    <!-- Three.js y OrbitControls (única dependencia externa) -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>

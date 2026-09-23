@@ -1,0 +1,139 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: system-ui, "Segoe UI", Arial, sans-serif;
+    background: #241a12;
+    color: #f5e6d3;
+    overflow: hidden;
+}
+
+#lienzo {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+}
+
+#lienzo:active { cursor: grabbing; }
+
+/* ---------- Encabezado ---------- */
+#encabezado {
+    position: fixed;
+    top: 14px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}
+
+#encabezado h1 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ff9a3c;
+    letter-spacing: 0.5px;
+}
+
+#encabezado p {
+    font-size: 12px;
+    color: #c2a184;
+    margin-top: 3px;
+}
+
+/* ---------- Paneles laterales ---------- */
+#panel, #controles {
+    position: fixed;
+    top: 78px;
+    width: 250px;
+    padding: 16px;
+    background: rgba(45, 31, 21, 0.92);
+    border: 1px solid #5c4330;
+    border-radius: 10px;
+}
+
+#panel { left: 16px; }
+#controles { right: 16px; }
+
+#panel h2, #controles h2 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ff9a3c;
+    margin-bottom: 12px;
+}
+
+.etiqueta {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #a3846a;
+    margin-top: 10px;
+}
+
+#dato-nombre {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f5e6d3;
+}
+
+#dato-geometria, #dato-altura, #dato-funcion {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #e0cbb4;
+}
+
+#dato-altura { font-variant-numeric: tabular-nums; }
+
+/* ---------- Controles ---------- */
+#controles button {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 9px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    text-align: left;
+    color: #f5e6d3;
+    background: #3d2b1c;
+    border: 1px solid #5c4330;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+#controles button:hover { background: #4d3724; border-color: #ff9a3c; }
+
+#controles label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: #c2a184;
+}
+
+#controles input[type="range"] { width: 100%; accent-color: #ff9a3c; }
+
+#estado {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #5c4330;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #a3846a;
+}
+
+/* ---------- Instrucciones ---------- */
+#instrucciones {
+    position: fixed;
+    bottom: 14px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #a3846a;
+    pointer-events: none;
+}
+
+@media (max-width: 820px) {
+    #encabezado h1 { font-size: 14px; }
+    #panel, #controles { width: 180px; padding: 12px; }
+    #instrucciones { font-size: 10px; }
+}
